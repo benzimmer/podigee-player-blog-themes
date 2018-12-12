@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs')
 const axios = require('axios')
 const https = require('https')
@@ -7,12 +9,7 @@ const { render, redirect, file, type, status } = server.reply
 
 const podcastId = process.argv[3]
 const apiKey = process.argv[2]
-let apiEndpoint
-if (process.env['MODE'] === 'development') {
-  apiEndpoint = 'https://app.podigee.de:3000/api/v1'
-} else {
-  apiEndpoint = 'https://app.podigee.com/api/v1'
-}
+const apiEndpoint = 'https://app.podigee.com/api/v1'
 
 const MiniLiquid = {
   readWithIncludes: (fileName) => {
