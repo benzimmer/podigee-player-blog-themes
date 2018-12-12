@@ -1,0 +1,26 @@
+<div class="comments">
+  <hr>
+  <h4>
+    {{'comments' | t}}
+  </h4>
+  {% for comment in comments %}
+    <div class="comment">
+      {{comment.image}}
+      <div class="comment-body">
+        <div class="comment-meta">
+          <small>by</small>
+          {{comment.name}}
+          <small>on</small>
+          {{comment.created_at | date:"%d. %B %Y"}}
+        </div>
+        <div class="comment-text">
+          {{comment.text}}      
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  
+  <hr>
+
+  {{comment_form}}
+</div>

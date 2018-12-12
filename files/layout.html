@@ -1,0 +1,22 @@
+<div class="section-main">
+  <header class="meta">
+    <div class="top-image">
+      <img alt="{{podcast.title}}" src="{{blog.header_image}}">
+    </div>
+    <div class="title">
+      <h1>
+        {{podcast.title}}
+      </h1>
+      <p>
+        {{podcast.subtitle}}
+      </p>
+    </div>
+  </header>
+  <div class="posts">
+    {% include 'navigation.html' %}
+
+    {{page_content}}
+  </div>
+</div>
+
+{% include 'sidebar.html' %}

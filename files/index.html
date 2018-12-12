@@ -1,0 +1,37 @@
+{% if blog.announcement != blank %}
+  <div class="announcement">
+    {{blog.announcement}}
+  </div>
+{% endif %}
+
+{% for episode in episodes %}
+  <article class="post">
+    <header>
+      <h1 class="post-heading">
+        <a href="{{episode.url}}">{{episode.title}}</a>
+      </h1>
+      <time>
+        {{episode.published_at | date: "%d. %B %Y"}}
+      </time>
+    </header>
+    <section class="post-media-player">
+      {{episode.player}}
+    </section>
+    <section class="post-downloads">
+      {{episode.downloads}}
+    </section>
+
+    <section class="post-social-media">
+      {{episode.social_links}}
+      {{episode.flattr}}
+    </section>
+    <section class="post-description">
+      {{episode.description}}
+    </section>
+  </article>
+{% endfor %}
+
+<div class="pagination">
+  {{ pagination.previous_page }}
+  {{ pagination.next_page }}
+</div>

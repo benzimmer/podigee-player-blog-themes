@@ -1,0 +1,316 @@
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #f6f6f6;
+  color: #222;
+  margin: 0 auto;
+  width: 960px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+a:visited {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0088cc;
+  text-decoration: underline;
+}
+
+hr {
+  border-bottom: none;
+  border-top: 1px solid #ccc;
+}
+
+.announcement {
+  margin: 0 -20px;
+  background: #EEDC82;
+  padding: 2px 10px 4px 10px;
+}
+
+.unstyled {
+  margin: 0;
+  padding: 0;
+}
+
+.unstyled li {
+  list-style: none;
+}
+
+.section-main {
+  background: #fff;
+  float:left;
+  height: 100%-;
+  width: 590px;
+}
+
+.meta {
+  position: relative;
+}
+
+.top-image img {
+  display: block;
+}
+
+.title {
+  color: #fff;
+  bottom: 0;
+  padding: 20px;
+  position: absolute;
+}
+
+.navigation {
+  padding-top: 5px;
+}
+
+.navigation ul {
+  overflow: hidden;
+}
+
+.navigation li {
+  float: left;
+  margin-right: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+.pagination {
+  overflow: hidden;
+}
+
+.pagination_next_link {
+  float: right;
+}
+
+.posts {
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  padding: 0 20px 20px;
+}
+
+.post {
+  clear: both;
+  margin-top: 20px;
+  word-wrap: break-word;
+}
+
+.post header h1 {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.post header time {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.post section {
+  margin-bottom: 20px;
+}
+
+.post-media-player {
+  margin: 0 -20px;
+}
+
+.post-media-player iframe {
+  width: 100%;
+}
+
+.podlovewebplayer_wrapper .podlovewebplayer_meta,
+.podlovewebplayer_wrapper .podlovewebplayer_tableend {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.podlovewebplayer_wrapper .podlovewebplayer_meta .togglers .infowindow,
+.podlovewebplayer_wrapper .podlovewebplayer_meta .togglers .showsharebuttons {
+  display: none !important;
+}
+
+.post .post-transcript {
+  text-align: center;
+}
+
+.post-social-media {
+  margin-left: 140px;
+  overflow: hidden;
+}
+
+.post .post-flattr {
+  float: left;
+  margin: 3px 0 0 5px;
+}
+
+.post .post-social-buttons {
+  float: left;
+  margin-bottom: 0px;
+}
+
+.post-social-buttons .link {
+  color: #444;
+  font-size: 24px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.post-social-buttons .link:hover {
+  color: #000;
+}
+
+.comments .comment {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.comments .comment img {
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+.comments .comment .comment-meta {
+  margin-bottom: 10px;
+}
+
+.comments .comment .comment-body {
+  margin-left: 60px;
+}
+
+.new-comment {
+  overflow: hidden;
+}
+
+.new-comment form .field label {
+  display: block;
+}
+
+.new-comment form .field small {
+  color: #888;
+}
+
+.new-comment form .field input,
+.new-comment form .field textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.new-comment form .field button {
+  background: #0088cc;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  float: right;
+  padding: 6px;
+}
+
+.new-comment .messages {
+  margin: 20px -20px 0;
+}
+
+.new-comment .messages .message {
+  padding: 5px 20px;
+}
+
+.new-comment .messages .success {
+  background: #dff0d8;
+  color: #468847;
+}
+
+.new-comment .messages .error {
+  background: #f2dede;
+  color: #b94a48;
+}
+
+.archive {
+  margin-top: 20px;
+}
+
+.archive time {
+  display: block;
+}
+
+.section-sidebar {
+  float:left;
+  padding-left: 20px;
+  width: 340px;
+}
+
+.section-sidebar .feeds {
+  padding-left: 20px;
+}
+
+.section-sidebar .follow {
+  padding-left: 5px;
+}
+
+.section-sidebar .follow li i {
+  margin-right: 5px;
+}
+
+.section-sidebar .copyright {
+  margin-top: 10px;
+}
+
+.powered-by-podigee {
+  margin-top: 40px;
+  text-align: center;
+  width: 50%
+}
+
+.powered-by-podigee img {
+  display: block;
+  margin: 0 auto;
+  width: 64px;
+}
+
+@media (max-width: 960px) {
+  body {
+    width: 100%;
+  }
+  
+  .section-main {
+    width: 62%;
+  }
+  
+  .section-sidebar {
+    width: 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-main {
+    width: 100%;
+  }
+  
+  .section-sidebar {
+    width: 100%;
+  }
+}
+
+/* Uncomment to hide text in page header */
+
+/*
+.meta .title {
+  display: none;
+}
+*/

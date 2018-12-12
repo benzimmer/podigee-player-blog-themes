@@ -1,0 +1,37 @@
+<h1>{{'about' | t}}</h1>
+
+{{ podcast.description }}
+
+<h2>{{'authors' | t }}</h2>
+
+{{ podcast.authors }}
+
+<h2>{{'subscribe' | t}}</h2>
+
+{% if podcast.subscribe_button_data.configuration.enabled %}
+  {{podcast.subscribe_button}}
+{% else %}
+<ul class="feeds">
+  <li><a href="{{podcast.feeds.mp3}}" rel="alternate">mp3</a></li>
+  <li><a href="{{podcast.feeds.aac}}" rel="alternate">aac/mp4 (iTunes)</a></li>
+  <li><a href="{{podcast.feeds.vorbis}}" rel="alternate">vorbis/ogg</a></li>
+  <li><a href="{{podcast.feeds.opus}}" rel="alternate">opus</a></li>
+</ul>
+{% endif %}
+
+<h2>{{'follow_us' | t}}</h2>
+
+{% assign connections = podcast.connections %}
+
+<ul class="follow unstyled">
+  {% if connections.twitter != blank %}
+  <li><i class="icon-twitter"></i><a href="https://twitter.com/{{connections.twitter}}"> @{{connections.twitter}}</a></li>
+  {% endif %}
+  {% if connections.appdotnet != blank %}
+  <li><i class="icon-adn"></i><a href="https://app.net/{{connections.appdotnet}}"> @{{connections.appdotnet}}</a></li>
+  {% endif %}
+  {% if connections.facebook != blank %}
+    <li><i class="icon-facebook"></i><a href="https://www.facebook.com/{{connections.facebook}}"> facebook.com/{{connections.facebook_name}}</a></li>
+  {% endif %}
+</ul>
+

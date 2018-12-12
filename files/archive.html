@@ -1,0 +1,18 @@
+<h1>{{'episode_archive' | t}}</h1>
+
+<ul class="unstyled archive">
+  {% for episode in episodes %}
+    <li>
+      <a href="{{episode.url}}" title="{{episode.title}}">{{episode.title}}</a>
+      <small><time>{{episode.published_at | date:"%d. %B %Y"}}</time></small>
+      <p>{{episode.description | truncate:200}}</p>
+      {{episode.downloads}}
+      <hr>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  {{ pagination.previous_page }}
+  {{ pagination.next_page }}
+</div>

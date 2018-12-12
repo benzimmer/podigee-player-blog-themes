@@ -1,0 +1,56 @@
+<div class="section-sidebar">
+  <h3>
+    {{'about' | t}}
+  </h3>
+  <p>
+    {{podcast.description}}
+  </p>
+  <small>
+    {{'by' | t}} {{podcast.authors}}
+  </small>
+
+  <h3>
+    {{'subscribe' | t}}
+  </h3>
+
+  {% if podcast.subscribe_button_data.configuration.enabled %}
+    {{podcast.subscribe_button}}
+  {% else %}
+  <ul class="feeds">
+    <li><a href="{{podcast.feeds.mp3}}" rel="alternate">mp3</a></li>
+    <li><a href="{{podcast.feeds.aac}}" rel="alternate">aac/mp4 (iTunes)</a></li>
+    <li><a href="{{podcast.feeds.vorbis}}" rel="alternate">vorbis/ogg</a></li>
+    <li><a href="{{podcast.feeds.opus}}" rel="alternate">opus</a></li>
+  </ul>
+  {% endif %}
+
+  <h3>
+    {{'follow_us' | t}}
+  </h3>
+
+  {% assign connections = podcast.connections %}
+
+  <ul class="follow unstyled">
+    {% if connections.twitter != blank %}
+      <li><i class="icon-twitter"></i><a href="https://twitter.com/{{connections.twitter}}"> @{{connections.twitter}}</a></li>
+    {% endif %}
+    {% if connections.appdotnet != blank %}
+      <li><i class="icon-adn"></i><a href="https://app.net/{{connections.appdotnet}}"> @{{connections.appdotnet}}</a></li>
+    {% endif %}
+    {% if connections.facebook != blank %}
+      <li><i class="icon-facebook"></i><a href="https://www.facebook.com/{{connections.facebook}}"> facebook.com/{{connections.facebook_name}}</a></li>
+    {% endif %}
+  </ul>
+  
+  {% if blog.show_podigee_banner %}
+  <p class="powered-by-podigee">
+    <img alt="Podigee logo" src="https://cdn.podigee.com/website-assets/podigee-logo-black-128x92px.png">
+    Published with
+    <a href="https://www.podigee.com/?utm_source=podigee-website&utm_medium=banner&utm_content={{podcast.slug}}&utm_campaign=blog-banner" title="Podigee - The Podcast Publishing Platform">
+      Podigee
+    </a>
+  </p>
+  {% endif %}
+  
+  {% if podcast.copyright %}<p class="copyright">{{ podcast.copyright }}</p>{% endif %}
+</div>

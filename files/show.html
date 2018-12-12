@@ -1,0 +1,40 @@
+<article class="post">
+
+  <header>
+    <h1 class="post-heading">
+      {{episode.title}}
+    </h1>
+    <time>
+      {{episode.published_at | date: "%d. %B %Y"}}
+    </time>
+  </header>
+
+  <section class="post-media-player">
+    {{episode.player}}
+  </section>
+  <section class="post-downloads">
+    {{episode.downloads}}
+  </section>
+  
+  {% if episode.transcript %}
+  <section class="post-transcript">
+    <a href="{{episode.url}}/transcript">{{'read_transcript' | t}}</a>
+  </section>
+  {% endif %}
+
+  <section class="post-social-media">
+    {{episode.social_links}}
+    {{episode.flattr}}
+  </section>
+
+  <section class="post-show-notes">
+    {% if episode.show_notes != blank %}
+      {{episode.show_notes}}
+    {% endif %}
+    {% if episode.show_notes == blank %}
+      {{episode.description}}
+    {% endif %}
+  </section>
+
+  {% include 'comments.html' %}
+</article>
