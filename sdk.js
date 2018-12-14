@@ -9,7 +9,8 @@ const { render, redirect, file, type, status } = server.reply
 
 const podcastId = process.argv[3]
 const apiKey = process.argv[2]
-const apiEndpoint = 'https://app.podigee.com/api/v1'
+const appUrl = 'https://app.podigee.com'
+const apiEndpoint = `${appUrl}/api/v1`
 
 const MiniLiquid = {
   readWithIncludes: (fileName) => {
@@ -106,6 +107,9 @@ controllers = {
   },
   applicationCss (ctx) {
     return type('text/css').send(fs.readFileSync('files/application.css'))
+  },
+  assets (ctx) {
+    return redirect(`${appUrl}/${ctx.path}`)
   }
 }
 
@@ -122,6 +126,7 @@ server(options, [
   get('/privacy-policy', controllers.privacyPolicy),
   get('/:id', controllers.show),
   get('/stylesheets/application.css', controllers.applicationCss),
+  get('/assets/*', controllers.applicationCss),
   // error(ctx => {
     // console.log('=======', ctx.error)
     // return status(500).send('An error occurred')
