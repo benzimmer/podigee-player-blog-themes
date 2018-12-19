@@ -19,7 +19,7 @@ yarn install
 In order to see the rendered blog, visit in your browser: http://127.0.0.1:9000
 
 - You can find the API key in your user settings. If you can't see it, please contact us.
-- You can find the Podcast ID in the URL when you edit your podcast in our interface: https://app.podigee.com/podcasts/**123**-my-cool-podcast
+- You can find the numeric Podcast ID in the URL when you edit your podcast in our interface: https://app.podigee.com/podcasts/123-my-cool-podcast
 
 ---
 
