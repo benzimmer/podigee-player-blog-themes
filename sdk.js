@@ -132,3 +132,4 @@ server(options, [
     // return status(500).send('An error occurred')
   // })
 ])
+console.log(`Starting server on http://127.0.0.1:${options.port}`)

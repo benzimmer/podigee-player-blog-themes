@@ -16,6 +16,8 @@ yarn install
 ./sdk.js $apiKey $podcastId
 ```
 
+In order to see the rendered blog, visit in your browser: http://127.0.0.1:9000
+
 - You can find the API key in your user settings. If you can't see it, please contact us.
 
 ---
