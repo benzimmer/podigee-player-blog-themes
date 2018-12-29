@@ -1,4 +1,5 @@
 <div class="section-main">
+  {% include 'navigation.html' %}
   <header class="meta">
     <div class="top-image">
       <img alt="{{podcast.title}}" src="{{blog.header_image}}">
@@ -13,10 +14,7 @@
     </div>
   </header>
   <div class="posts">
-    {% include 'navigation.html' %}
 
     {{page_content}}
   </div>
 </div>
-
-{% include 'sidebar.html' %}
