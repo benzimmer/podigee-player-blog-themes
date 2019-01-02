@@ -97,9 +97,21 @@ hr {
   padding: 40px 40px 60px 40px;
 }
 
+@media (max-width: 960px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
 .footer__section {
   padding: 0 30px;
   width: calc(100vw / 3);
+}
+
+@media (max-width: 960px) {
+  .footer__section {
+    width: 100%;
+  }
 }
 
 .meta {
@@ -111,7 +123,7 @@ hr {
 .title {
   text-align: center;
 
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.2);
   padding: 20px 40px 30px 40px;
   position: absolute;
   top: 50%;
@@ -230,6 +242,7 @@ hr {
 
   margin-bottom: 0;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .post--small .post-time--float {
