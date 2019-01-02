@@ -14,14 +14,14 @@
         <a href="{{episode.url}}">{{episode.title}}</a>
       </h1>
     </header>
+    <section class="post-description">
+      {{episode.description}}
+    </section>
     <section class="post-media-player">
       {{episode.player}}
     </section>
     <section class="post-downloads">
       {{episode.downloads}}
-    </section>
-    <section class="post-description">
-      {{episode.description}}
     </section>
   </article>
 {% endfor %}

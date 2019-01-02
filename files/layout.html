@@ -1,10 +1,19 @@
 <div class="section-main">
   <header class="meta">
-    <div class="top-image" style="background-image:url({{blog.header_image}})"></div>
     <div class="title">
       <h1 class="title__headline">{{podcast.title}}</h1>
       <p class="title__subheadline">{{podcast.subtitle}}</p>
     </div>
+    <article class="title__article">
+      <header>
+        <h2 class="title__heading">
+          <a href="{{episodes.first.url}}">{{episodes.first.title}}</a>
+        </h2>
+      </header>
+      <section class="post-media-player">
+        {{episodes.first.player}}
+      </section>
+    </article>
   </header>
   {% include 'navigation.html' %}
   <div class="posts">
