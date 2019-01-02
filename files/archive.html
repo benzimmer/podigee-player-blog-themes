@@ -1,13 +1,21 @@
-<h1>{{'episode_archive' | t}}</h1>
+<h1 class="posts-title">{{'episode_archive' | t}}</h1>
 
 <ul class="unstyled archive">
   {% for episode in episodes %}
     <li>
-      <a href="{{episode.url}}" title="{{episode.title}}">{{episode.title}}</a>
-      <small><time>{{episode.published_at | date:"%d. %B %Y"}}</time></small>
-      <p>{{episode.description | truncate:200}}</p>
-      {{episode.downloads}}
-      <hr>
+      <article class="post post--small">
+        <header>
+          <time class="post-time post-time--float">
+            {{episode.published_at | date: "%d. %B %Y"}}
+          </time>
+          <h2 class="post-heading">
+            <a href="{{episode.url}}">{{episode.title}}</a>
+          </h2>
+        </header>
+        <section class="post-description">
+          {{episode.description | truncate:200}}
+        </section>
+      </article>
     </li>
   {% endfor %}
 </ul>

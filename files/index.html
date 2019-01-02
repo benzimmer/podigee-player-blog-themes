@@ -7,12 +7,12 @@
 {% for episode in episodes %}
   <article class="post">
     <header>
+        <time class="post-time post-time--float">
+          {{episode.published_at | date: "%d. %B %Y"}}
+        </time>
       <h1 class="post-heading">
         <a href="{{episode.url}}">{{episode.title}}</a>
       </h1>
-      <time>
-        {{episode.published_at | date: "%d. %B %Y"}}
-      </time>
     </header>
     <section class="post-media-player">
       {{episode.player}}

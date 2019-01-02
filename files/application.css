@@ -1,16 +1,72 @@
+@import url('//fonts.googleapis.com/css?family=Nunito:400,800');
+@import url('//fonts.googleapis.com/css?family=Fjalla+One');
+
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
 
 *, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 
-html,
-body {
-  height: 100%;
+/* VARIABLES */
+:root {
+  --theme-color-primary: #4EBCD4;
+  --theme-color-primary-dark: #258398;
+  --theme-color-primary-darker: #113C46;
+  --theme-color-primary-light: #CAEBF2;
+  --theme-color-highlight: #FF383F;
+  --theme-color-light: #FAFAFA;
+  --theme-color-neutral: #A9A9A9;
 }
 
+/* GENERAL FONT SETTINGS */
+
 body {
-  background: #f6f6f6;
-  color: #222;
+  color: var(--theme-color-neutral);
+  font-family: 'Nunito';
+  font-weight: 400;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+a,
+a:visited {
+  color: var(--theme-color-primary);
+  text-decoration: none;
+  transition: color 0.125s ease-in-out;
+}
+
+a:hover {
+  color: var(--theme-color-highlight);
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 0.1px;
+  line-height: 1.5em;
+}
+
+.title {
+  color: #fff;
+}
+
+/* GENERAL LAYOUT SETTINGS */
+
+body {
+  background: var(--theme-color-light);
   margin: 0 auto;
 }
 
@@ -18,26 +74,70 @@ img {
   max-width: 100%;
 }
 
-a,
-a:visited {
-  color: #0088cc;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0088cc;
-  text-decoration: underline;
+h2 {
+  margin: 60px 0 20px 0;
 }
 
 hr {
   border-bottom: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--theme-color-neutral);
 }
 
 .announcement {
   margin: 0 -20px;
-  background: #EEDC82;
   padding: 2px 10px 4px 10px;
+}
+
+.footer {
+  color: var(--theme-color-light);
+
+  background-color: var(--theme-color-primary-darker);
+  display: flex;
+  flex-direction: row;
+  padding: 40px 40px 60px 40px;
+}
+
+.footer__section {
+  padding: 0 30px;
+  width: calc(100vw / 3);
+}
+
+.meta {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
+
+.title {
+  text-align: center;
+
+  background-color: hsla(0, 0%, 0%, 0.5);
+  padding: 20px 40px 30px 40px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.title__headline {
+  font-size: 70px;
+  font-weight: 800;
+
+  margin: 0;
+}
+
+.title__subheadline {
+  font-size: 24px;
+  font-weight: 800;
+
+  margin: 0;
+}
+
+.top-image {
+  background-color: var(--theme-color-highlight);
+  background-size: cover;
+  height: 100%;
 }
 
 .unstyled {
@@ -49,29 +149,10 @@ hr {
   list-style: none;
 }
 
-.section-main {
-  background: #fff;
-  float: left;
-}
-
-.meta {
-  position: relative;
-}
-
-.top-image img {
-  display: block;
-}
-
-.title {
-  color: #fff;
-  bottom: 0;
-  padding: 20px;
-  position: absolute;
-}
-
 .navigation {
   background-color: #fff;
-  position: fixed;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -95,11 +176,18 @@ hr {
 }
 
 .navigation a {
-  color: inherit;
+  color: var(--theme-color-primary-dark);
   text-decoration: none;
 }
 
+.navigation a:active,
+.navigation a:focus,
+.navigation a:hover {
+  color: var(--theme-color-highlight);
+}
+
 .pagination {
+  margin: 30px 0 10px 0;
   overflow: hidden;
 }
 
@@ -108,25 +196,41 @@ hr {
 }
 
 .posts {
-  border-left: 1px solid #e4e4e4;
-  border-right: 1px solid #e4e4e4;
-  padding: 0 20px 20px;
+  margin: 0 auto;
+  padding: 0 20px 100px 20px;
+  max-width: 960px;
+}
+
+.posts-title {
+  margin-top: 80px;
 }
 
 .post {
   clear: both;
-  margin-top: 20px;
+  border-bottom: 8px solid var(--theme-color-primary-light);
+  margin: 0;
+  padding: 45px 0;
   word-wrap: break-word;
 }
 
-.post header h1 {
-  margin-bottom: 5px;
-  margin-top: 0;
+.post--small {
+  border-bottom: 6px solid var(--theme-color-primary-light);
+  padding: 20px 0;
 }
 
-.post header time {
+.post-time {
+  font-size: 16px;
+  text-align: right;
+
   display: block;
   margin-bottom: 20px;
+}
+
+.post-time--float {
+  float: right;
+
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 .post section {
@@ -253,10 +357,6 @@ hr {
 
 .archive {
   margin-top: 20px;
-}
-
-.archive time {
-  display: block;
 }
 
 .section-sidebar {
