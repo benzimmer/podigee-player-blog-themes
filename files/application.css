@@ -1,5 +1,5 @@
-@import url('//fonts.googleapis.com/css?family=Nunito:400,800');
-@import url('//fonts.googleapis.com/css?family=Fjalla+One');
+@import url('//fonts.googleapis.com/css?family=Ruda');
+@import url('//fonts.googleapis.com/css?family=Roboto+Slab');
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
@@ -8,20 +8,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 /* VARIABLES */
 :root {
-  --theme-color-primary: #4EBCD4;
-  --theme-color-primary-dark: #258398;
-  --theme-color-primary-darker: #113C46;
-  --theme-color-primary-light: #CAEBF2;
-  --theme-color-highlight: #FF383F;
-  --theme-color-light: #FAFAFA;
-  --theme-color-neutral: #A9A9A9;
+  --theme-color-primary: #B56357;
+  --theme-color-primary-dark: #753C33;
+  --theme-color-primary-darker: #2E1814;
+  --theme-color-primary-light: #D5A69F;
+  --theme-color-highlight: #B4DBC0;
+  --theme-color-light: #FDFDFD;
+  --theme-color-neutral: #A7B3A5;
 }
 
 /* GENERAL FONT SETTINGS */
 
 body {
   color: var(--theme-color-neutral);
-  font-family: 'Nunito';
+  font-family: 'Roboto Slab';
   font-weight: 400;
 }
 
@@ -54,7 +54,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, nav {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Ruda', sans-serif;
   letter-spacing: 0.1px;
   line-height: 1.5em;
 }
@@ -105,7 +105,7 @@ hr {
 .meta {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(70vh);
 }
 
 .title {
@@ -152,7 +152,7 @@ hr {
 .navigation {
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -207,14 +207,13 @@ hr {
 
 .post {
   clear: both;
-  border-bottom: 8px solid var(--theme-color-primary-light);
+  border-bottom: 1px solid var(--theme-color-primary-light);
   margin: 0;
   padding: 45px 0;
   word-wrap: break-word;
 }
 
 .post--small {
-  border-bottom: 6px solid var(--theme-color-primary-light);
   padding: 20px 0;
 }
 
@@ -231,6 +230,10 @@ hr {
 
   margin-bottom: 0;
   margin-top: 20px;
+}
+
+.post--small .post-time--float {
+  margin-top: 10px;
 }
 
 .post section {
