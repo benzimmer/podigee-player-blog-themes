@@ -157,9 +157,15 @@ hr {
 
 .meta {
   background-color: var(--theme-color-grey-light);
-  padding: 120px 0;
+  padding: 120px 0 40px 0;
   position: relative;
   width: 100vw;
+}
+
+@media (max-width: 960px) {
+  .meta {
+    padding: 120px 20px 40px 20px;
+  }
 }
 
 .meta__wrapper {
