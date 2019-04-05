@@ -3,25 +3,20 @@
     {{blog.announcement}}
   </div>
 {% endif %}
-
+  <h2 class="posts__title">All episodes</h2>
 {% for episode in episodes %}
   <article class="post">
     <header>
-        <time class="post-time post-time--float">
-          {{episode.published_at | date: "%d. %B %Y"}}
-        </time>
-      <h1 class="post-heading">
+      <time class="post__time">
+        {{episode.published_at | date: "%d. %B %Y"}}
+      </time>
+      <h1 class="post__heading">
         <a href="{{episode.url}}">{{episode.title}}</a>
       </h1>
     </header>
-    <section class="post-description">
+    <section class="post__description">
       {{episode.description}}
-    </section>
-    <section class="post-media-player">
-      {{episode.player}}
-    </section>
-    <section class="post-downloads">
-      {{episode.downloads}}
+      <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
     </section>
   </article>
 {% endfor %}

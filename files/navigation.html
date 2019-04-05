@@ -1,16 +1,22 @@
 <nav class="navigation">
-  <ul class="navigation__list">
-    <li class="navigation__list__element">
-      <a href="{{blog.links.home}}">{{'home' | t}}</a>
-    </li>
-    <li class="navigation__list__element">
-      <a href="{{blog.links.archive}}">{{'archive' | t }}</a>
-    </li>
-    <li class="navigation__list__element">
-      <a href="{{blog.links.about}}">{{'about' | t }}</a>
-    </li>
-    <!-- <li class="navigation__list__element">
-      <a href="{{blog.links.imprint}}">{{'imprint' | t }}</a>
-    </li> -->
-  </ul>
+  <div class="navigation__toggle">
+      <input class="navigation__button" type="checkbox" />
+      <span class="navigation__icon"></span>
+      <span class="navigation__icon"></span>
+      <span class="navigation__icon"></span>
+      <ul class="navigation__list">
+        <li class="navigation__list__element">
+          <a href="{{blog.links.home}}">{{'home' | t}}</a>
+        </li>
+        <li class="navigation__list__element">
+          <a href="{{blog.links.archive}}">{{'archive' | t }}</a>
+        </li>
+        <li class="navigation__list__element">
+          <a href="{{blog.links.about}}">{{'about' | t }}</a>
+        </li>
+        <!-- <li class="navigation__list__element">
+          <a href="{{blog.links.imprint}}">{{'imprint' | t }}</a>
+        </li> -->
+      </ul>
+  </div>
 </nav>

@@ -1,14 +1,6 @@
 <footer class="footer">
   <section class="footer__section">
-    <h3>{{'about' | t}}</h3>
-    <p>{{podcast.description}}</p>
-    <small>{{'by' | t}} {{podcast.authors}}</small>
-    {% if podcast.copyright %}
-      <p class="copyright">© {{ podcast.copyright }}</p>
-    {% endif %}
-  </section>
-  <section class="footer__section">
-    <h3>{{'subscribe' | t}}</h3>
+    <h3 class="footer__section__headline">{{'subscribe' | t}}</h3>
     {% if podcast.subscribe_button_data.configuration.enabled %}
       {{podcast.subscribe_button}}
     {% else %}
@@ -21,7 +13,15 @@
     {% endif %}
   </section>
   <section class="footer__section">
-    <h3>{{'follow_us' | t}}</h3>
+    <h3 class="footer__section__headline">{{'about' | t}}</h3>
+    <p>{{podcast.description}}</p>
+    <small>{{'by' | t}} {{podcast.authors}}</small>
+    {% if podcast.copyright %}
+      <p class="copyright">© {{ podcast.copyright }}</p>
+    {% endif %}
+  </section>
+  <section class="footer__section">
+    <h3 class="footer__section__headline">{{'follow_us' | t}}</h3>
     {% assign connections = podcast.connections %}
     <ul class="follow unstyled">
       {% if connections.twitter != blank %}
