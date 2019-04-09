@@ -501,6 +501,10 @@ hr {
   }
 }
 
+.posts--small {
+  max-width: 800px;
+}
+
 .posts a {
   color: var(--theme-color-grey-dark);
 }
