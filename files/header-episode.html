@@ -1,0 +1,22 @@
+<header class="meta">
+  <div class="meta__wrapper">
+    <article class="title__article">
+      <header>
+        <time class="title__date">
+          {{episode.published_at | date: "%d. %B %Y"}}
+        </time>
+        <h1 class="title__headline">
+          <a href="{{episode.url}}">{{episode.title}}</a>
+        </h1>
+        <img class="title__cover" src="{{podcast.cover_image_url}}" />
+      </header>
+      <section class="post-media-player">
+        {{episode.player}}
+      </section>
+      <section class="title__description">
+        {{episode.description}}
+        <a class="link" href="{{episode.url}}">{{'back_to_episode' | t}}</a>
+      </section>
+    </article>
+  </div>
+</header>

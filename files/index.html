@@ -1,27 +1,29 @@
-{% if blog.announcement != blank %}
-  <div class="announcement">
-    {{blog.announcement}}
+{% include 'header-first-episode.html' %}
+<div class="posts">
+  {% if blog.announcement != blank %}
+    <div class="announcement">
+      {{blog.announcement}}
+    </div>
+  {% endif %}
+    <h2 class="posts__title">All episodes</h2>
+  {% for episode in episodes %}
+    <article class="post">
+      <header>
+        <time class="post__time">
+          {{episode.published_at | date: "%d. %B %Y"}}
+        </time>
+        <h1 class="post__heading">
+          <a href="{{episode.url}}">{{episode.title}}</a>
+        </h1>
+      </header>
+      <section class="post__description">
+        {{episode.description}}
+        <a class="link" href="{{episode.url}}">{{'back_to_episode' | t}}</a>
+      </section>
+    </article>
+  {% endfor %}
+  <div class="pagination">
+    {{ pagination.previous_page }}
+    {{ pagination.next_page }}
   </div>
-{% endif %}
-  <h2 class="posts__title">All episodes</h2>
-{% for episode in episodes %}
-  <article class="post">
-    <header>
-      <time class="post__time">
-        {{episode.published_at | date: "%d. %B %Y"}}
-      </time>
-      <h1 class="post__heading">
-        <a href="{{episode.url}}">{{episode.title}}</a>
-      </h1>
-    </header>
-    <section class="post__description">
-      {{episode.description}}
-      <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
-    </section>
-  </article>
-{% endfor %}
-
-<div class="pagination">
-  {{ pagination.previous_page }}
-  {{ pagination.next_page }}
 </div>

@@ -1,29 +1,5 @@
 <div class="section-main">
-  <header class="meta">
-    <div class="meta__wrapper">
-      <article class="title__article">
-        <header>
-          <time class="title__date">
-            {{episodes.first.published_at | date: "%d. %B %Y"}}
-          </time>
-          <h1 class="title__headline">
-            <a href="{{episodes.first.url}}">{{episodes.first.title}}</a>
-          </h1>
-          <img class="title__cover" src="{{podcast.cover_image_url}}" />
-        </header>
-        <section class="post-media-player">
-          {{episodes.first.player}}
-        </section>
-        <section class="title__description">
-          {{episodes.first.description}}
-          <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
-        </section>
-      </article>
-    </div>
-  </header>
   {% include 'navigation.html' %}
-  <div class="posts">
-    {{page_content}}
-  </div>
+  {{page_content}}
 </div>
 {% include 'footer.html' %}
