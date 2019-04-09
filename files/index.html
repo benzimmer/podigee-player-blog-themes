@@ -1,12 +1,17 @@
 {% if blog.announcement != blank %}
-  <div class="announcement">
-    {{blog.announcement}}
-  </div>
+<div class="announcement">
+  {{blog.announcement}}
+</div>
 {% endif %}
-  <h2 class="posts__title">All episodes</h2>
-{% for episode in episodes %}
-  <article class="post">
-    <header>
+<h2 class="posts__title">
+  All episodes
+  <div class="zigzag-primary"></div>
+</h2>
+<div class="posts__wrapper">
+  {% for episode in episodes %}
+  <article class="post" style="background-image:url({{episode.cover_image_url}})">
+    <div class="post__background-overlay"></div>
+    <header class="post__header">
       <time class="post__time">
         {{episode.published_at | date: "%d. %B %Y"}}
       </time>
@@ -14,13 +19,9 @@
         <a href="{{episode.url}}">{{episode.title}}</a>
       </h1>
     </header>
-    <section class="post__description">
-      {{episode.description}}
-      <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
-    </section>
   </article>
-{% endfor %}
-
+  {% endfor %}
+</div>
 <div class="pagination">
   {{ pagination.previous_page }}
   {{ pagination.next_page }}

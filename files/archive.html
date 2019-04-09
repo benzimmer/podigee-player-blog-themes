@@ -1,26 +1,22 @@
-<h1 class="posts__title">{{'episode_archive' | t}}</h1>
-
-<ul class="unstyled archive">
+<h1 class="posts__title">
+  {{'episode_archive' | t}}
+  <div class="zigzag-primary"></div>
+</h1>
+<div class="posts__wrapper">
   {% for episode in episodes %}
-    <li>
-      <article class="post">
-        <header>
-          <time class="post__time">
-            {{episode.published_at | date: "%d. %B %Y"}}
-          </time>
-          <h1 class="post__heading">
-            <a href="{{episode.url}}">{{episode.title}}</a>
-          </h1>
-        </header>
-        <section class="post__description">
-          {{episode.description}}
-          <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
-        </section>
-      </article>
-    </li>
+    <article class="post" style="background-image:url({{episode.cover_image_url}})">
+      <div class="post__background-overlay"></div>
+      <header class="post__header">
+        <time class="post__time">
+          {{episode.published_at | date: "%d. %B %Y"}}
+        </time>
+        <h1 class="post__heading">
+          <a href="{{episode.url}}">{{episode.title}}</a>
+        </h1>
+      </header>
+    </article>
   {% endfor %}
-</ul>
-
+</div>
 <div class="pagination">
   {{ pagination.previous_page }}
   {{ pagination.next_page }}

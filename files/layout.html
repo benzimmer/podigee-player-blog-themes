@@ -1,29 +1,31 @@
 <div class="section-main">
-  <header class="meta">
-    <div class="meta__wrapper">
+  <div class="title-image" style="background-image:url({{blog.header_image}})">
+    <div class="title__background-overlay"></div>
+    <header class="title">
       <article class="title__article">
-        <header>
-          <time class="title__date">
-            {{episodes.first.published_at | date: "%d. %B %Y"}}
-          </time>
-          <h1 class="title__headline">
-            <a href="{{episodes.first.url}}">{{episodes.first.title}}</a>
-          </h1>
-          <img class="title__cover" src="{{podcast.cover_image_url}}" />
-        </header>
         <section class="post-media-player">
           {{episodes.first.player}}
         </section>
-        <section class="title__description">
-          {{episodes.first.description}}
-          <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
-        </section>
+        <time class="title__date">
+          {{episodes.first.published_at | date: "%d. %B %Y"}}
+        </time>
+        <h1 class="title__headline">
+          <a href="{{episodes.first.url}}">{{episodes.first.title}}</a>
+        </h1>
       </article>
+    </header>
+  </div>
+  <section class="title-description">
+    <div class="title-description__wrapper">
+      {{episodes.first.description}}
+      <a class="link" href="{{episodes.first.url}}">{{'back_to_episode' | t}}</a>
     </div>
-  </header>
+  </section>
   {% include 'navigation.html' %}
-  <div class="posts">
-    {{page_content}}
+  <div class="posts-wrapper">
+    <div class="posts">
+      {{page_content}}
+    </div>
   </div>
 </div>
 {% include 'footer.html' %}

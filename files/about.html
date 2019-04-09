@@ -1,13 +1,11 @@
-<h1 class="posts__title">{{'about' | t}}</h1>
-
+<h1 class="posts__title">
+  {{'about' | t}}
+  <div class="zigzag-primary"></div>
+</h1>
 {{ podcast.description }}
-
 <h2>{{'authors' | t }}</h2>
-
 {{ podcast.authors }}
-
 <h2>{{'subscribe' | t}}</h2>
-
 {% if podcast.subscribe_button_data.configuration.enabled %}
   {{podcast.subscribe_button}}
 {% else %}
@@ -18,11 +16,8 @@
   <li><a href="{{podcast.feeds.opus}}" rel="alternate">opus</a></li>
 </ul>
 {% endif %}
-
 <h2>{{'follow_us' | t}}</h2>
-
 {% assign connections = podcast.connections %}
-
 <ul class="follow unstyled">
   {% if connections.twitter != blank %}
   <li><i class="icon-twitter"></i><a href="https://twitter.com/{{connections.twitter}}"> @{{connections.twitter}}</a></li>
