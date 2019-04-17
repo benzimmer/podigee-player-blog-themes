@@ -12,8 +12,8 @@
     </h2>
     <div class="posts__wrapper">
       {% for episode in episodes %}
-      <article class="post" style="background-image:url({{episode.cover_image_url}})">
-        <div class="post__background-overlay"></div>
+      <article class="post">
+        <div class="post__background-image" style="background-image:url({{episode.cover_image_url}})"></div>
         <header class="post__header">
           <time class="post__time">
             {{episode.published_at | date: "%d. %B %Y"}}
